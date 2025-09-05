@@ -414,7 +414,7 @@ for map_idx in range(num_maps):
                 dones = torch.FloatTensor(dones).unsqueeze(1).to(device)
 
                 q_values = q_net(states).gather(1, actions)
-                with torch.no_grad():
+                with torch.no_grad():   
                     max_next_q = target_net(next_states).max(1)[0].unsqueeze(1)
                     q_target = rewards + gamma * max_next_q * (1 - dones)
 
@@ -441,3 +441,9 @@ for map_idx in range(num_maps):
         'epsilon': epsilon
     }, model_file)
     print(f"Model saved after Map {map_idx+1}")
+
+# The model has now started to learn more generally... Tho there are some fluctuating results,
+# the model is learning slowly with this "vision" that it has got.. 
+# "The dense network is struggling to efficiently learn the spatial patterns.
+# It's using brute force and a massive amount of experience to figure out what a CNN could learn more naturally." - Gemini
+# Training this model more with more maps variations would slowly but surely improve the loss, which is now at 0.04.
