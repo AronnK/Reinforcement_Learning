@@ -358,6 +358,6 @@ for cycle in range(num_cycles):
 
 # After running 5 and a half cycles (which took like 1o hrs) and testing, I've come to the realisation that, 
 # CNN might be an overkill for this simple frozen lake environment. And by talking to Gemini I also came to know
-# about the over-optimization problem, which can be solved through a Double-DQN...? 
+# about the "echo-chamber" or "positive bias" problem, which can be solved through a Double-DQN...? 
 # Still not very clear about it but I've asked for a new code with DDQN implementation and it will be the last iteration
 # of this Frozen Lake programs. Will understand more about the problem and the DDQN solution, will execute the code and see the results..

@@ -191,7 +191,9 @@ def get_valid_actions(state, grid_size=4):
     if row == 0: actions[3] = False            
     return torch.tensor(actions, dtype=torch.bool, device=device)
 
-model_path = "better_cnn_dqn_frozenlake_masked.pth"
+# model_path = "better_cnn_dqn_frozenlake_masked.pth"
+model_path = "ddqn_cnn_frozenlake.pth"
+
 if not os.path.exists(model_path):
     raise FileNotFoundError(f"Model file not found at '{model_path}'. Please ensure the path is correct.")
 
